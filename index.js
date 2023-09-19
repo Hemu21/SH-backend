@@ -31,8 +31,11 @@ const app = express()
 
 app.use(express.json())
 app.use(cookie())
+app.use(cors())
 
-
+app.get('/', (req, res) => {
+	res.send(`Running ${PORT}`);
+});
 
 app.get("/api/v1/users",(req,res)=>{
     usersModel.find().then((ele)=>res.send(ele)).catch((ele)=>res.send(ele))
