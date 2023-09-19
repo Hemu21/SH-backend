@@ -10,8 +10,8 @@ const updateUserData = require("./src/functions/updateuserdata.js");
 const updateUsersData = require("./src/functions/updateusersdata.js");
 
 
-const accountSid = process.env.ACCOUNTSID 
-const authToken = process.env.AUTHTOKEN 
+const accountSid = process.env.ACCOUNTSID || "ACcc26f6bce8a2dd33e11ed13bb64cbf9f"
+const authToken = process.env.AUTHTOKEN || "9d394722be5b489478eab1bf68cf65c8"
 const twilioClient = new twilio(accountSid, authToken)
 const myNumber = process.env.MYNUMBER || "+18052033564"
 const PORT = process.env.PORT || 3000
@@ -52,6 +52,7 @@ app.put("/api/v1/update-users",(req,res)=>{
 
   
 app.post("/api/v1/sign",(req,res)=>{
+	console.log("requested")
     addUsersData(req.body).then((ele)=>{res.send(ele);console.log("send")}).catch((err)=>{res.send(err);console.log("error "+err)})
 })
 
@@ -75,7 +76,7 @@ app.post('/api/v1/send-otp',async (req, res) => {
         from: myNumber,
         to: mobileNumber,
       });
-  
+      console.log("send otp")
     
       res.send({ message: 'OTP sent successfully',otp:otp });
     } catch (error) {
@@ -86,4 +87,4 @@ app.post('/api/v1/send-otp',async (req, res) => {
 
 module.exports = app;
 
-app.listen(PORT,()=>{console.log(`listening........ ${PORT}`)})
+app.listen(PORT,()=>{console.log(`listening ${PORT}`)})
