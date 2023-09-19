@@ -84,4 +84,4 @@ app.post('/api/v1/send-otp',async (req, res) => {
 
 module.exports = app;
 
-app.listen(PORT,()=>{console.log("listening........")})
+app.listen(PORT,()=>{console.log(`listening........ ${PORT}`)})
