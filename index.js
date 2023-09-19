@@ -10,9 +10,9 @@ const updateUserData = require("./src/functions/updateuserdata.js");
 const updateUsersData = require("./src/functions/updateusersdata.js");
 
 
-const accountSid = process.env.ACCOUNTSID ;
-const authToken = process.env.AUTHTOKEN ;
-const twilioClient = new twilio(accountSid, authToken);
+const accountSid = process.env.ACCOUNTSID 
+const authToken = process.env.AUTHTOKEN 
+const twilioClient = new twilio(accountSid, authToken)
 const myNumber = process.env.MYNUMBER || "+18052033564"
 const PORT = process.env.PORT || 3000
 var otpStore = {};
