@@ -35,34 +35,34 @@ app.use(cors())
 
 
 
-app.get("/users",(req,res)=>{
+app.get("/api/v1/users",(req,res)=>{
     usersModel.find().then((ele)=>res.send(ele)).catch((ele)=>res.send(ele))
 })
 
 
-app.put("/update-user",(req,res)=>{
+app.put("/api/v1/update-user",(req,res)=>{
     updateUserData(req,res)
 })
 
-app.put("/update-users",(req,res)=>{
+app.put("/api/v1/update-users",(req,res)=>{
     updateUsersData(req,res)
 })
 
   
-app.post("/sign",(req,res)=>{
+app.post("/api/v1/sign",(req,res)=>{
     addUsersData(req.body).then((ele)=>{res.send(ele);console.log("send")}).catch((err)=>{res.send(err);console.log("error "+err)})
 })
 
 
-app.post("/add-user-data",(req,res)=>{
+app.post("/api/v1/add-user-data",(req,res)=>{
     addUserData(req.body).then(()=>{res.send({"message":"added user data succussfully"})}).catch((ele)=>{res.send({"error":ele})})
 })
 
-app.post("/login",(req,res)=>{
+app.post("/api/v1/login",(req,res)=>{
     login(req,res)
 })
 
-app.post('/api/send-otp',async (req, res) => {
+app.post('/api/v1/send-otp',async (req, res) => {
     const  mobileNumber  = req.body.mobileNumber;
     const otp = generateOTP();
     console.log(mobileNumber)
