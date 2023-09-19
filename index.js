@@ -10,8 +10,8 @@ const updateUserData = require("./src/functions/updateuserdata.js");
 const updateUsersData = require("./src/functions/updateusersdata.js");
 
 
-const accountSid = process.env.ACCOUNTSID || "ACcc26f6bce8a2dd33e11ed13bb64cbf9f";
-const authToken = process.env.AUTHTOKEN || "9d394722be5b489478eab1bf68cf65c8";
+const accountSid = process.env.ACCOUNTSID ;
+const authToken = process.env.AUTHTOKEN ;
 const twilioClient = new twilio(accountSid, authToken);
 const myNumber = process.env.MYNUMBER || "+18052033564"
 const PORT = process.env.PORT || 3000
@@ -84,4 +84,4 @@ app.post('/api/send-otp',async (req, res) => {
 
 module.exports = app;
 
-app.listen(3000,()=>{console.log("listening........")})
+app.listen(PORT,()=>{console.log("listening........")})
