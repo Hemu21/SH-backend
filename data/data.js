@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-const dot = require("dotenv")
 const path = require("path")
 
-dot.config(path.join(__dirname,"../.env"))
 const user = process.env.USER || "Hemu21"
 const password = process.env.PASSWORD || "20052018";
 mongoose.connect(`mongodb+srv://${user}:${password}@user.0bn426g.mongodb.net/?retryWrites=true&w=majority`)
