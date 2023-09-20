@@ -22,7 +22,10 @@ function generateOTP() {
   return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
-
+const corsOptions = {
+  origin: ["https://sh-frontend-git-main-hemu21.vercel.app","https://sh-frontend-hemu21.vercel.app","https://sh-frontend-omega.vercel.app"],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 
 
