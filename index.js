@@ -16,14 +16,13 @@ const twilioClient = new twilio(accountSid, authToken)
 const myNumber = process.env.MYNUMBER || "+18052033564"
 const PORT = process.env.PORT || 3000
 var otpStore = {};
-console.log(accountSid,authToken)
 // Generate a random OTP
 function generateOTP() {
   return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
 const corsOptions = {
-  origin: ["https://sh-frontend-git-main-hemu21.vercel.app","https://sh-frontend-hemu21.vercel.app","https://sh-frontend-omega.vercel.app"],
+  origin: ["https://sh-video-chat-messager-hemu21.vercel.app","https://sh-video-chat-messager-omega.vercel.app"],
   optionsSuccessStatus: 200 
 }
 
