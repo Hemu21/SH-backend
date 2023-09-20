@@ -24,7 +24,7 @@ function generateOTP() {
 
 const corsOptions = {
   origin: ["https://sh-frontend-git-main-hemu21.vercel.app","https://sh-frontend-hemu21.vercel.app","https://sh-frontend-omega.vercel.app"],
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200 
 }
 
 
@@ -34,7 +34,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cookie())
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.get('/', (req, res) => {
 	res.send(`Running ${PORT}`);
