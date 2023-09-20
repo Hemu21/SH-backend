@@ -4,7 +4,7 @@ const auth = require("../auth/auth.js")
 
 const updateUserData = async (req,res) => {
     const isAllow = auth(req,res)
-    if(isAllow){
+    if(!isAllow){
         const id = req.body.id
         const ele = req.body.data
         console.log(ele)
