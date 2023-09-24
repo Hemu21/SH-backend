@@ -10,6 +10,4 @@ const updateUsersData = async (req,res) => {
         const data = await usersModel.findByIdAndUpdate(id,{$set:ele})
         res.send({"message":"user data updated"})
     }
-}
-
 module.exports = updateUsersData;
